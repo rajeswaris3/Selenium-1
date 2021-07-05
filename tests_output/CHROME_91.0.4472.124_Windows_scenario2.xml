@@ -5,9 +5,9 @@
 
   <testsuite name="scenario2"
     errors="0" failures="0" hostname="" id="" package="scenario2" skipped="0"
-    tests="1" time="3.960" timestamp="">
+    tests="1" time="2.690" timestamp="">
   
-    <testcase name="Demo test selenium-test2.dev" classname="scenario2" time="3.960" assertions="4">
+    <testcase name="Demo test selenium-test2.dev" classname="scenario2" time="2.690" assertions="4">
 
     
 
@@ -19,14 +19,6 @@
     </testcase>
   
 
-  
-    <system-err>
-        TypeError: page.clickLinkSelector is not a function
-   - writing an ES6 async test case? - keep in mind that commands return a Promise; 
-   - writing unit tests? - make sure to specify &#34;unit_tests_mode=true&#34; in your config.
-       at Object.Demo test selenium-test1.dev (C:\SOURCE\NIGHTWATCH\firstProject\tests\scenario1.js:22:14)
-       at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    </system-err>
   
 
     

@@ -6,8 +6,7 @@ module.exports = {
       
        const page = browser.page.navigateToPage(); 
        const mainPageTitle = 'SeleniumHQ Browser Automation';
-       const downloadButtonSelector = 'Downloads';
-      //  const downloadButtonSelector1 = '.nav-item[text="Downloads"]';
+       const downloadButtonSelector = 'Downloads';      
        const downloadPageUrl = 'https://www.selenium.dev/downloads/';
 
        //navigate to url from POM
@@ -19,13 +18,8 @@ module.exports = {
         .waitForElementVisible('body')      
         .assert.titleContains(mainPageTitle, 'Main title selenium browser automation')
         
-        page.clickLinkSelector(downloadButtonSelector,downloadPageUrl)
-
         //navigate to download page and verify downloads url
-        // .assert.visible(downloadButtonSelector1)        
-        // .click('link text',downloadButtonSelector)
-        
-        // .assert.urlEquals(downloadPageUrl)
+        page.clickLinkAssert(downloadButtonSelector,downloadPageUrl,"Navigation to Downloads page successful")
         // .saveScreenshot('tests_output/google.png')       
       
       }

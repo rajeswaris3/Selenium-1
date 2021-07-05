@@ -11,8 +11,7 @@ module.exports = {
        const headerWrapper = '#header-wrapper';
        const inputSearchBox = '#search-by';
        const searchText = 'Grid';    
-       const autoCompleteSecondResultXpath = '//div[@class="autocomplete-suggestions "]/div[2]';  
-    //    var searchSuggestion  = 'Grid 3';               
+       const autoCompleteSecondResultXpath = '//div[@class="autocomplete-suggestions "]/div[2]';                 
 
        //navigate to url from POM
        page
@@ -23,26 +22,28 @@ module.exports = {
         .waitForElementVisible('body')      
         
         //navigate to download page and verify downloads url
-        .click('link text',documentationButtonSelector)
-        .assert.urlEquals(documentationPageUrl)
+        page.clickLinkAssert(documentationButtonSelector,documentationPageUrl)
+        // .click('link text',documentationButtonSelector)
+        // .assert.urlEquals(documentationPageUrl)
         .saveScreenshot('tests_output/document.png')   
         
-        //search Grid and select second value 
+        //search Grid for a predefined value
         .waitForElementVisible(headerWrapper)        
         .setValue(inputSearchBox,searchText)   
         
-        // searchSuggestion = browser.useXpath().getAttribute(autoCompleteSecondResultXpath,'data-title') 
-        var searchSuggestion=browser.useXpath().getAttribute(autoCompleteSecondResultXpath,'data-title', function(result) {
-            console.log('result', result)
-            return result.value
+        //Select auto complete suggestion by index and retrieve the selected text ,and verify the result on the navigated page
+        browser.useXpath().getAttribute(autoCompleteSecondResultXpath,'data-title', function(result) {
+            console.log('result', result)            
+            if(result.value)
+            {
+                browser
+                .useXpath().click(autoCompleteSecondResultXpath)
+                .useCss()
+                .waitForElementVisible('body') 
+                .saveScreenshot('tests_output/search.png')
+                .assert.containsText('body',result.value, "Selected text found in new page") 
+            }
         })
-        
-
-      browser
-        .useXpath().click(autoCompleteSecondResultXpath)
-        .useCss()
-        .waitForElementVisible('body') 
-        .assert.containsText('body',searchSuggestion) 
       }
 
 

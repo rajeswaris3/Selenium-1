@@ -8,10 +8,10 @@ module.exports= {
 
     commands:[{
 
-        clickLinkAssert(selector,linkUrl){
+        clickLinkAssert(selector,linkUrl,disMessage){
             
             this.click('link text',selector);
-            this.assert.urlEquals(linkUrl, "URL validation Successful.")
+            this.assert.urlEquals(linkUrl, disMessage)
             return this;
         },  
 

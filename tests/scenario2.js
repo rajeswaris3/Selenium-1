@@ -17,20 +17,20 @@ module.exports = {
 
         browser
         .waitForElementVisible('body') 
-        //navigate to About - governanace
+        //navigate to About - governanace using drop down menu
         .click(aboutArrowDropdown)
         // waitForElementVisible('#aboutSubnav')  
-        .click('link text',aboutGovernance)
-        .assert.urlEquals(governanceUrl,'Navigated to Governance URL')
+
+        page.clickLinkAssert(aboutGovernance,governanceUrl,"Navigation to Governance page successful")
+
+        browser
         .saveScreenshot('tests_output/governance.png')    
 
-        //learnmore navigation
-        // .moveToElement(learnmoreButton,10,10)
+        //scroll to the container
         .getLocationInView(supportContainer)
-        .assert.visible(supportContainer)
-        .saveScreenshot('tests_output/support.png')   
-        .click('link text',learnmoreButton)
-        .assert.urlEquals(sponsorsUrl,'Navigated to Sponsors URL')
+        .assert.visible(supportContainer)          
+  
+        page.clickLinkAssert(learnmoreButton,sponsorsUrl,"Navigation to Sponsors page successful")
         .saveScreenshot('tests_output/sponsor.png')   
 
     }

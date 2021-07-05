@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="scenario1"
+    errors="1" failures="0" hostname="" id="" package="scenario1" skipped="0"
+    tests="1" time="1.714" timestamp="">
+  
+    <testcase name="Demo test selenium-test1.dev" classname="scenario1" time="1.714" assertions="2">
+
+    
+
+    
+    <error message="page.clickLinkSelector is not a function" type="error"><![CDATA[
+    TypeError: page.clickLinkSelector is not a function
+    at Object.Demo test selenium-test1.dev (C:\SOURCE\NIGHTWATCH\firstProject\tests\scenario1.js:22:14)
+    at Context.call (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\context.js:376:35)
+    at TestCase.run (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\testcase.js:58:31)
+    at Runnable.__runFn (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\index.js:384:80)
+    at Runnable.run (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\runnable.js:123:21)
+    at TestSuite.createRunnable (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\index.js:496:33)
+    at TestSuite.handleRunnable (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\index.js:501:18)
+    at C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\testsuite\index.js:384:21
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async DefaultRunner.runTestSuite (C:\SOURCE\NIGHTWATCH\firstProject\node_modules\nightwatch\lib\runner\test-runners\default.js:68:7)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+        TypeError: page.clickLinkSelector is not a function
+   - writing an ES6 async test case? - keep in mind that commands return a Promise; 
+   - writing unit tests? - make sure to specify &#34;unit_tests_mode=true&#34; in your config.
+       at Object.Demo test selenium-test1.dev (C:\SOURCE\NIGHTWATCH\firstProject\tests\scenario1.js:22:14)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

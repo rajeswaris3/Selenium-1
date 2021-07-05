@@ -1,0 +1,20 @@
+{
+  "name": "firstProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch",
+    "test-sc1": "./node_modules/.bin/nightwatch --tags @main -f json:tests_output/report.json | bunyan -o short",
+    "debug": "node --inspect-brk node_modules/.bin/nightwatch/.bin/nightwatch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^91.0.1",
+    "geckodriver": "^2.0.1",
+    "nightwatch": "^1.7.7",
+    "selenium-server": "^3.141.59"
+  }
+}
